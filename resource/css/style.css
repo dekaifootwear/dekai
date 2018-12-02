@@ -526,8 +526,8 @@ header.fixed {
 
 /*-- contact --*/
 .indexContactWrap {
-	background: url("../img/banner/home_contact_banner.jpg") center center no-repeat fixed;
-	background-size: cover;
+	background: url("../img/banner/home_contact_banner.jpg") center center no-repeat;
+	/*background-size: cover;*/
 }
 
 .indexContactWrap .row {
