@@ -1,4 +1,4 @@
-var per_page = 10;
+var per_page = 12;
 var rows = $('.innerProductItems'),
     pages = Math.ceil(rows.length / per_page);
 
