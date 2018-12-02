@@ -87,7 +87,7 @@ h3 {
 	text-align: right;
 }
 
-.fontWeightBold{
+.fontWeightBold {
 	font-weight: 700;
 }
 
@@ -118,7 +118,8 @@ h3 {
 	word-break: break-all;
 	height: inherit;
 }
-.displayInlineBlock{
+
+.displayInlineBlock {
 	display: inline-block;
 }
 
@@ -277,17 +278,7 @@ h3 {
 	}
 }
 
-@media screen and (max-width: 414px) {
-	.container-narrow {
-		padding-right: 1.75rem !important;
-		padding-left: 1.75rem !important;
-	}
-
-	.col-sm-1 {
-		flex: 0 0 100%;
-		width: 100%;
-	}
-
+@media screen and (max-width: 660px) {
 	.row-sm-col {
 		flex-flow: column wrap;
 	}
@@ -302,6 +293,18 @@ h3 {
 
 	.row-sm-col-reverse > div:first-child {
 		margin-top: 2rem;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.container-narrow {
+		padding-right: 1.75rem !important;
+		padding-left: 1.75rem !important;
+	}
+
+	.col-sm-1 {
+		flex: 0 0 100%;
+		width: 100%;
 	}
 }
 
