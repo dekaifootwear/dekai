@@ -28,7 +28,24 @@
 		padding: 3px;
 		margin-left: 3px;
 	}
+	.setPageDiv {
+		width: 1100px;
+		margin: auto;
+		margin-bottom: 91px;
+		margin-top: 37px;
+	}
+
+	#pagination {
+		margin: auto;
+		margin-left: 100px;
+	}
+
+	.img-responsive {
+		width: 30px;
+		height: 30px;
+	}
 </style>
+
 
 <body id="all">
 <nav>
@@ -67,6 +84,18 @@
 <section class="innerArea">
 	<div class="container-narrow">
 		<div class="innerProductWrap">
+			<!--<div class='row'>
+                        <div class='col-md-1   col-xs-1'>
+                        <img src='" + img + "'/   class='img-responsive'>
+                        </div>
+                        <div class='col-md-3   col-xs-3'>
+                        <p>11111111111111111 </p>
+                        </div></div>-->
+
+			<div class="list">
+
+			</div>
+
 			<div class="innerProductItems" onclick="openModal();currentSlide(1)">
 				<a>
 					<span class=""><img src="resource/img/products/product-001.jpg" alt="女士牛皮休閒鞋"></span>
@@ -203,7 +232,9 @@
 		<a class="next" onclick="plusSlides(1)"><img src="resource/img/icons/right.svg"></a>
 
 	</div>
-
+	<div class="setPageDiv">
+		<div class="Pagination" id="pagination"></div>
+	</div>
 </div>
 
 <footer class="text-center">Designed by De-Kai Company</footer>
@@ -211,6 +242,65 @@
 <script src="resource/js/nav.js"></script>
 <script src="resource/js/headerScroll.js"></script>
 <script src="resource/js/lightbox.js"></script>
-<script src="resource/js/pagination_.js"></script>
+<!--<script src="resource/js/pagination_.js"></script>-->
+<script>
+
+    //分页
+    $(function() {
+
+        $('.setPageDiv').change(function() {
+
+            getMsg(parseInt($(this).val()))
+        })
+
+        function getMsg(num) {
+            $.ajax({
+                url: 'data/business.json',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    //1.计算分页数量
+                    var showNum = num;
+                    var dataL = data.list.length;
+                    var pageNum = Math.ceil(dataL / showNum);
+                    $('.Pagination').pagination(pageNum, {
+                        num_edge_entries: 1, //边缘页数
+                        num_display_entries: 4, //主体页数
+                        items_per_page: 1, //每页显示1项
+                        prev_text: "上一页",
+                        next_text: "下一页",
+                        callback: function(index) {
+                            //console.log(index);
+                            var html = '<ul>'
+
+                            console.log(showNum * index + '~' + parseInt(showNum * index) + parseInt(showNum))
+                            for(var i = showNum * index; i < showNum * index + showNum; i++) {
+                                //console.log(i)
+                                if(i < dataL) {
+
+                                    var img = data.list[i].img;
+                                    var manager = data.list[i].manager; //交易类型
+                                    html += "<div  class=\"innerProductItems\" onclick=\"openModal();currentSlide(1)\">";
+                                    html += "<a>"
+                                    html += "<span>"
+                                    html += "<img>"
+                                    html += "<span class=\"pt-2\">" + manager + "</span>"
+                                    html += "</a></div>";
+
+                                }
+                            }
+                            html += '</ul>';
+                            $('.list').html(html)
+                        }
+                    })
+
+                }
+            })
+        }
+        getMsg(6)
+
+    })
+
+</script>
 </body>
 </html>
