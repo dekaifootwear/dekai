@@ -122,6 +122,12 @@
 	.mySlides {
 		height: 500px;
 	}
+	.slide_1,
+	.slide_2,
+	.slide_3,
+	.slide_4 {
+		background-size: 1280px;
+	}
 }
 @media screen and (max-width: 768px) {
 	.dotWrap {
@@ -132,6 +138,12 @@
 @media screen and (max-width: 414px) {
 	.mySlides {
 		height: 300px;
+	}
+	.slide_1,
+	.slide_2,
+	.slide_3,
+	.slide_4 {
+		background-size: 768px;
 	}
 	.text {
 		top: calc(50% - 62px);

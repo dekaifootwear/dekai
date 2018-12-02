@@ -420,6 +420,10 @@ header.fixed {
 	width: 5rem;
 }
 
+.headerMenu {
+	font-size: 1.15rem;
+}
+
 .headerMenu a {
 	margin-left: 1.7rem;
 }
