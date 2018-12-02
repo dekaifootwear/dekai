@@ -30,6 +30,7 @@
 .innerArea {
 	color: var(--darkFont-color);
 	padding: 1.5rem 0;
+	min-height: calc(100vh - 344px);
 }
 
 .innerArea .row {
@@ -73,11 +74,14 @@
 	color: var(--sub-color);
 }
 
-@media screen and (max-width: 768px) {
-	.bannerArea {
-		height: 300px;
+@media screen and (max-width: 1000px) {
+	.innerProductWrap > div {
+		width: calc(100% / 3 - 3rem / 3);
+		margin-right: 1.5rem;
 	}
+}
 
+@media screen and (max-width: 950px) {
 	.innerProductWrap > div {
 		width: calc(100% / 2 - 1rem / 2);
 		margin-right: 1rem;
@@ -90,6 +94,14 @@
 	.innerProductWrap > div:nth-child(2n+2) {
 		margin-right: 0;
 	}
+}
+
+@media screen and (max-width: 768px) {
+	.bannerArea {
+		height: 300px;
+	}
+
+
 }
 
 @media screen and (max-width: 414px) {

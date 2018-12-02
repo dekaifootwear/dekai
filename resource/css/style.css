@@ -21,7 +21,7 @@ body {
 	font-weight: 400;
 	position: relative;
 	overflow: auto;
-	word-break: break-all;
+	/*word-break: break-all;*/
 }
 
 /* -------------------
@@ -87,6 +87,10 @@ h3 {
 	text-align: right;
 }
 
+.fontWeightBold{
+	font-weight: 700;
+}
+
 @media screen and (max-width: 414px) {
 	h1 {
 		font-size: 1.5rem;
@@ -113,6 +117,9 @@ h3 {
 	display: table-cell;
 	word-break: break-all;
 	height: inherit;
+}
+.displayInlineBlock{
+	display: inline-block;
 }
 
 /*-- line --*/
@@ -309,7 +316,7 @@ nav {
 	position: fixed;
 	top: 0;
 	right: -300px;
-	background: var(--font-inverse-color);
+	background: var(--main-color);
 	height: 100vh;
 	z-index: 4;
 	width: 300px;
